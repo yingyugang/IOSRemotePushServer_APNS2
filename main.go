@@ -33,7 +33,7 @@ func main() {
 			"aps" : {
 				"alert" : "Hello!"
 			},
-			"image_url": "https://yingyugang.s3-ap-northeast-1.amazonaws.com/goldIco.png"
+			"image-url": "https://yingyugang.s3-ap-northeast-1.amazonaws.com/goldIco.png"
 		}`)
 	client := apns2.NewClient(cert).Development()//   Production()
 	res, err := client.Push(notification)
