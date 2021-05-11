@@ -10,14 +10,6 @@ import (
  * apnsでプッシューを送る、テストずみ。
  */
 func main() {
-	//certPath := flag.String("cert", "../cert.p12", "")
-	//token := flag.String("token", "4648c0188ea303345012df2dee723b509dc2d1dab470cb0adb3515914156ef95", "")
-	//topic := flag.String("topic", "com.moba1", "")
-	//flag.Parse()
-	//if *certPath == "" || *token == "" || *topic == "" {
-	//	flag.PrintDefaults()
-	//	os.Exit(1)
-	//}
 	//用工程下的APNsDev.p12
 	cert, err := certificate.FromP12File("C:/Users/yingy/Documents/IOSRemotePushServer_APNS2/APNsDev.p12", "1fd94d19bbe3c")
 	if err != nil {
@@ -25,11 +17,11 @@ func main() {
 	}
 	notification := &apns2.Notification{}
 	//在XCodeLog里面找到DeviceToken在这里替换。每次重新安装应用的时候会产生新的Token。
-	notification.DeviceToken = "a467c01f57345848a5167e8d0f55b871064dcb5f73b81c82734c71ec18340b1b"
+	notification.DeviceToken = "79ecd5681860feadc8579353b1fa4d98f79de7defa9bed371d6e37571ba4ba80"
 	notification.Topic = "com.moba"
 	notification.Payload = []byte(`{
 			"aps" : {
-				"alert":"Hello!",
+				"alert":"Hello123ddd444!",
         		"badge":1,
         		"mutable-content":1
 			},
